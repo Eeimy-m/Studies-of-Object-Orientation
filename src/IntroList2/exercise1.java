@@ -14,8 +14,6 @@
 
 import java.util.Scanner;
 
-public static final int DAYS_IN_WEEK;
-
 void main() {
     
 }
