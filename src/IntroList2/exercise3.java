@@ -8,5 +8,12 @@
  */
 
 void main() {
-    
+    int[] numbers = new int[10];
+    int[] otherInts = new int[20];
+    int number, i, j, cont = 0;
+    final Scanner scanner = new Scanner(System.in);
+
+    for(i = 0; i < 5; i++) {
+        numbers[i] = scanner.nextInt();
+    }
 }

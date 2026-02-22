@@ -12,6 +12,10 @@
     Qualquer valor fora do domínio de entrada tem como saída esperada a String "Erro".
 */
 
+import java.util.Scanner;
+
+public static final int DAYS_IN_WEEK;
+
 void main() {
     
 }
