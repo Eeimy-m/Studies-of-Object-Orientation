@@ -15,12 +15,12 @@
 */
 
 void main() {
-    double a, b, c;
+    int a, b, c;
     Scanner scanner = new Scanner(System.in);
     System.out.println("Insira a seguir respectivamente o tamanho dos lados de um triângulo: ");
-    a = scanner.nextDouble();
-    b = scanner.nextDouble();
-    c = scanner.nextDouble();
+    a = scanner.nextInt();
+    b = scanner.nextInt();
+    c = scanner.nextInt();
 
     if(a > 0 && b > 0 && c > 0) {
         if(a == b && b == c)

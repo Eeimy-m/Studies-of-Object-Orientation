@@ -24,26 +24,27 @@
     V = velocidade
 */
 
+void main() {
+    Scanner scanner = new Scanner(System.in);
+    int L, V;
+    double M, A, diferenca;
+    System.out.println("Informe a velocidade limite: ");
+    L = scanner.nextInt();
+    System.out.println("Informe o valor da multa: ");
+    M = scanner.nextDouble();
+    System.out.println("Informe o valor adicional: ");
+    A = scanner.nextDouble();
+    System.out.println("Informe a velocidade do veículo: ");
+    V = scanner.nextInt();
+
+    diferenca = V - L;
+    if(diferenca > 0)
+        calcularValorDaMulta(diferenca, M, A);
+    else
+        System.out.println("0.00");
+}
+
 void calcularValorDaMulta(double diferenca, double valMulta, double adPorKim) {
     double valorFinal = valMulta + adPorKim * diferenca;
     System.out.println(valorFinal);
-}
-
-void main() {
-    Scanner scanner = new Scanner(System.in);
-    double velocidadeLimite, valorMulta, adicionalPorKm, velocidadeVeiculo, diferenca;
-    System.out.println("Informe a velocidade limite: ");
-    velocidadeLimite = scanner.nextDouble();
-    System.out.println("Informe o valor da multa: ");
-    valorMulta = scanner.nextDouble();
-    System.out.println("Informe o valor adicional: ");
-    adicionalPorKm = scanner.nextDouble();
-    System.out.println("Informe a velocidade do veículo: ");
-    velocidadeVeiculo = scanner.nextDouble();
-
-    diferenca = velocidadeVeiculo - velocidadeLimite;
-    if(diferenca > 0)
-        calcularValorDaMulta(diferenca, valorMulta, adicionalPorKm);
-    else
-        System.out.println("0.00");
 }
