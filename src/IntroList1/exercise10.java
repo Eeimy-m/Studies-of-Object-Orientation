@@ -24,5 +24,18 @@
 */
 
 void main() {
-    
+    Scanner scanner = new Scanner(System.in);
+    int x1, x2, v1, v2;
+    x1 = scanner.nextInt();
+    v1 = scanner.nextInt();
+    x2 = scanner.nextInt();
+    v2 = scanner.nextInt();
+
+    String output = null;
+    double n = (x1-x2)/(v2-v1);
+
+    if((x1-x2)/(v2-v1) < 0)
+        output = "NAO";
+    else
+        output = "SIM";
 }
