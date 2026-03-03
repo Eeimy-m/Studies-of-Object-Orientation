@@ -28,23 +28,27 @@ void main() {
     Scanner scanner = new Scanner(System.in);
     int L, V;
     double M, A, diferenca;
-    System.out.println("Informe a velocidade limite: ");
+
     L = scanner.nextInt();
-    System.out.println("Informe o valor da multa: ");
     M = scanner.nextDouble();
-    System.out.println("Informe o valor adicional: ");
     A = scanner.nextDouble();
-    System.out.println("Informe a velocidade do veículo: ");
     V = scanner.nextInt();
 
     diferenca = V - L;
     if(diferenca > 0)
-        calcularValorDaMulta(diferenca, M, A);
+        System.out.println(calcularValorDaMulta(diferenca, M, A));
     else
         System.out.println("0.00");
 }
 
-void calcularValorDaMulta(double diferenca, double valMulta, double adPorKim) {
-    double valorFinal = valMulta + adPorKim * diferenca;
-    System.out.println(valorFinal);
+String calcularValorDaMulta(double diferenca, double m, double a) {
+    String output =  null;
+
+    if(diferenca > 0) {
+        output = String.format(Locale.US, "%.2f", m + a * diferenca);
+    }
+    else
+        output = "0.00";
+
+    return output;
 }
