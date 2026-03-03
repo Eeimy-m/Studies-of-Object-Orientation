@@ -1,3 +1,6 @@
+package list02;
+import java.util.Scanner;
+
 /*
     Você está responsável pelo bolo de aniversário da sua priminha e decidiu que o bolo terá uma vela para cada ano da
     idade total dela. Quando ela assopra as velas, ela só é capaz de apagar apenas as velas mais altas. Sua tarefa é fazer
@@ -18,6 +21,9 @@
     => Exercício gentilmente cedido pelos profs. Jorge Cutigi e Adenilso Simão (ICMC/USP)
  */
 
-void main() {
-    
+public class Ex05 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+    }
 }

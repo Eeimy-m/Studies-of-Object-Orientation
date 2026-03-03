@@ -1,3 +1,6 @@
+package list02;
+import java.util.Scanner;
+
 /*
     Você está de volta em seu hotel na Tailândia depois de um dia de mergulhos. O seu quarto tem duas lâmpadas, chamadas
     de A e B. No hotel há dois interruptores, que chamaremos de C1 e C2. Ao apertar C1, a lâmpada A acende se estiver
@@ -24,6 +27,9 @@
     => Exercício gentilmente cedido pelos profs. Jorge Cutigi e Adenilso Simão (ICMC/USP)
  */
 
-void main() {
-    
+public class Ex04 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+    }
 }
