@@ -1,4 +1,4 @@
-/*
+    /*
     Um motorista de Uber estipula o preço de uma determinada viagem dada a quantidade de quilômetros percorrida.
     Para viagens de até X km, é cobrado um valor R$ V1 por km. Acima de X km, é cobrado o valor R$ V2.
     Faça um programa que leia X, V1, V2 e a quantidade de quilômetros A da viagem e imprima o valor total
@@ -18,26 +18,25 @@
 */
 
 void main() {
-    double X, V1, V2, quantkm;
+    double V1, V2, quantkm;
+    int X;
     Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Input the value of x in kilometers: ");
-    X = scanner.nextDouble();
-    System.out.println("Input the value of V1: ");
+    X = scanner.nextInt();
     V1 = scanner.nextDouble();
-    System.out.println("Input the value of V2: ");
     V2 = scanner.nextDouble();
-    System.out.println("Input the distance of the ride in kilometers: ");
     quantkm = scanner.nextDouble();
 
-    if(quantkm <= X)
-        calcFinalValue(V1, quantkm);
+    System.out.println(calcFinalValue(X, V1, V2, quantkm));
+}
+
+double calcFinalValue(int x, double v1, double v2, double a) {
+    double output = -0.1;
+
+    if(a <= x)
+        output = v1 * a;
     else
-        calcFinalValue(V2, quantkm);
+        output = v2 * a;
+
+    return output;
 }
-
-void calcFinalValue(double valPkm, double distance) {
-    System.out.println(valPkm * distance);
-}
-
-
