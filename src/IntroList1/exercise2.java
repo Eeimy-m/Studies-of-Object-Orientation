@@ -24,15 +24,14 @@ void main() {
 
     if(a > 0 && b > 0 && c > 0) {
         if(a == b && b == c)
-            System.out.println("Equilátero");
+            System.out.println("Equilatero");
         else if(a == b || b == c || a == c)
-            System.out.println("Isósceles");
+            System.out.println("Isosceles");
         else if(a + b < c || b + c < a || a + c < b)
-            System.out.println("Não forma triângulo");
+            System.out.println("Nao forma triangulo");
         else
             System.out.println("Escaleno");
     }
     else
         System.out.println("Erro");
-
 }

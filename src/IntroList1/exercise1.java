@@ -12,6 +12,21 @@
     Qualquer valor fora do domínio de entrada tem como saída esperada a String "Erro".
 */
 
+void main() {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Insira a seguir a quantidade de livros: ");
+    int quantLivros = scanner.nextInt();
+    double valorCriterioA, valorCriterioB;
+
+    if(quantLivros > 0) {
+        valorCriterioA = calcularCriterioA(quantLivros);
+        valorCriterioB = calcularCriterioB(quantLivros);
+        compararValores(valorCriterioA, valorCriterioB);
+    }
+    else
+        System.out.println("Erro");
+}
+
 void compararValores(double valorA, double valorB) {
     if(valorA == valorB)
         System.out.println("Indiferente.");
@@ -29,19 +44,4 @@ double calcularCriterioB(int quant) {
 double calcularCriterioA(int quant) {
     double valorFinal = quant * 0.25 + 7.50;
     return  valorFinal;
-}
-
-void main() {
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Insira a seguir a quantidade de livros: ");
-    int quantLivros = scanner.nextInt(); //pede p. o usuário inserir a quantidade de livros
-    double valorCriterioA, valorCriterioB;
-
-    if(quantLivros > 0) {
-        valorCriterioA = calcularCriterioA(quantLivros);
-        valorCriterioB = calcularCriterioB(quantLivros);
-        compararValores(valorCriterioA, valorCriterioB);
-    }
-    else
-        System.out.println("Erro");
 }
