@@ -21,30 +21,32 @@
 void main() {
     Scanner scanner = new Scanner(System.in);
     double L, A, C, M;
-    System.out.println("Informe a largura da parede: ");
+
     L = scanner.nextDouble();
-    System.out.println("Informe a altura da parede: ");
     A = scanner.nextDouble();
-    System.out.println("Informe o valor de uma lata de tinta: ");
     C = scanner.nextDouble();
-    System.out.println("Informe o rendimento dessa lata de tinta: ");
     M = scanner.nextDouble();
 
-    if(L * A <= M) {
-        System.out.println(1);
-        System.out.println(C);
-    }
+    if(L * A <= M)
+        System.out.println("1 " + C);
+    else if(L * A == 0)
+        System.out.println("0 0.00");
     else
-        calcQuantLatas(M, L * A, C);
+        System.out.println(calcQuantLatas(M, L * A, C));
 }
 
-void calcQuantLatas(double rendimento, double area, double valor) {
+String calcQuantLatas(double rendimento, double area, double valor) {
     int i, quantLatas = 0;
+    String latas, valorFinal, stringFinal;
+
     for(i = 0; area > 0; i++) {
         area-=rendimento;
         quantLatas++;
     }
 
-    System.out.println(quantLatas);
-    System.out.println(valor * quantLatas);
+    latas = String.format("%d", quantLatas);
+    valorFinal = String.format(Locale.US, "%.2f", quantLatas * valor);
+    stringFinal = latas + " " + valorFinal;
+
+    return stringFinal;
 }
