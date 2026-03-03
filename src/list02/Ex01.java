@@ -26,15 +26,18 @@ public class Ex01 {
 
         for(i = 0; i < DAYS_IN_WEEK; i++) {
             temperatures[i] = scanner.nextInt();
-            somaTemps+=temperatures[i];
         }
 
         final Ex01 ex01 = new Ex01();
-        System.out.println(ex01.compute(temperatures, somaTemps));
+        System.out.println(ex01.compute(temperatures));
     }
 
-    int compute(int[] temperatures, int soma) {
-        int output = 0;
+    int compute(int[] temperatures) {
+        int output = 0, soma = 0;
+
+        for(int i = 0; i < temperatures.length; i++)
+            soma+=temperatures[i];
+
         double media = (double) soma/DAYS_IN_WEEK;
 
         for(int i = 0; i < DAYS_IN_WEEK; i++) {
