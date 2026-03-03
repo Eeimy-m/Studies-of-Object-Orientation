@@ -1,3 +1,7 @@
+package list02;
+import java.util.Scanner;
+import java.util.StringJoiner;
+
 /*
     Faça um programa que construa dois vetores A e B de 5 posições, lendo e
     adicionando valores inteiros a esses vetores. Crie um terceiro vetor C,
@@ -17,6 +21,45 @@
               100 50 0 -50 -100
 */
 
-void main() {
-    
+public class Ex02 {
+
+    public static final int SIZEOF_VECTOR = 5;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] vetA = new int[SIZEOF_VECTOR];
+        int[] vetB = new int[SIZEOF_VECTOR];
+
+        for(int i = 0; i < vetA.length; i++) {
+            vetA[i] = scanner.nextInt();
+        }
+
+        for(int i = 0; i < vetB.length; i++) {
+            vetB[i] = scanner.nextInt();
+        }
+
+        System.out.println(compute(vetA, vetB));
+    }
+
+    static String compute(int[] arrayA, int[] arrayB) {
+        int[] arrayC = new int[SIZEOF_VECTOR];
+
+        for(int i = 0; i < arrayC.length; i++) {
+            if(sumOverflowsOrUnderflows(arrayA[i], arrayB[i]))
+                return "Erro";
+
+            arrayC[i] = arrayA[i] + arrayB[i];
+        }
+
+        final var joiner = new StringJoiner(", ");
+        for(int value : arrayC)
+            joiner.add(String.valueOf(value));
+
+        return joiner.toString();
+    }
+
+    private static boolean sumOverflowsOrUnderflows(int a, int b) {
+        return (long) a + b > Integer.MAX_VALUE ||
+                (long) a + b < Integer.MIN_VALUE;
+    }
 }
