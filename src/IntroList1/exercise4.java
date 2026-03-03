@@ -15,29 +15,28 @@
  */
 
 void main() {
-    double N;
-    int C, M;
+    int C, M, N;
     Scanner scanner = new Scanner(System.in);
-    System.out.println("Insira a seguir o valor em dinheiro levado pelo cliente, o valor de um chocolate e a quantidade de embalagens: ");
-    N = scanner.nextDouble();
+//  System.out.println("Insira a seguir o valor em dinheiro levado pelo cliente, o valor de um chocolate e a quantidade de embalagens: ");
+
+    N = scanner.nextInt();
     C = scanner.nextInt();
     M = scanner.nextInt();
 
     if(N >= 0 && C >= 0 && M >= 0)
-        calculoQuantChocolates(N, C, M);
+        System.out.println(calculoQuantChocolates(N, C, M));
     else
         System.out.println("Erro");
 }
 
-void calculoQuantChocolates(double N, int C, int M) {
-    int quantTotalChoc, i;
-
-    if(M % 5 == 0 && M >= 5)
-        System.out.println(N/C + M/5);
-    else if(M >= 5) {
-        for(i = 1; (M - i)%5!= 0; i++) {
-            M-=1;
+int calculoQuantChocolates(int N, int C, int M) {
+    int quantChoc = N/C, quantEmbalagens = quantChoc, quantTotalChoc = quantChoc;
+    if(quantEmbalagens >= M) {
+        for(quantChoc = 0; quantEmbalagens >= M; quantChoc++) {
+            quantEmbalagens-=M;
+            quantEmbalagens++;
         }
-        System.out.println(N/C + M/5);
+        quantTotalChoc+=quantChoc;
     }
+    return quantTotalChoc;
 }
