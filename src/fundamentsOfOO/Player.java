@@ -5,8 +5,11 @@ public class Player {
     private int number;
     private boolean isFielded;
 
-    public Player() {
-
+    public Player(String name, String position, int number, boolean isFielded) {
+        this.name = name;
+        this.position = position;
+        this.number = number;
+        this.isFielded = isFielded;
     }
 
     String getStateAsString(boolean isFielded) {
