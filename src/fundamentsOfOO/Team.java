@@ -12,14 +12,21 @@ public class Team {
         this.name = name;
         this.baseLocation = baseLocation;
         this.coachName = coachName;
+        this.players = new ArrayList<>();
     }
 
     public void addPlayer(Player player) {
-
+        if(players.size() < 18)
+            players.add(player);
+        else
+            System.out.println("The team is already full.");
     }
 
     public void removePlayer(Player player) {
-
+        if(players.size() > 0)
+            players.remove(player);
+        else
+            System.out.println("The team is empty.");
     }
 
     public void substitute(Player substitute, Player starter) {
