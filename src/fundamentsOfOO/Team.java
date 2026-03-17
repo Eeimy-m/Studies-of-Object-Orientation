@@ -30,7 +30,9 @@ public class Team {
     }
 
     public void substitute(Player substitute, Player starter) {
+        if(players.contains(substitute) && players.contains(starter)) {
 
+        }
     }
 
     public void setCapitain(Player captain) {
