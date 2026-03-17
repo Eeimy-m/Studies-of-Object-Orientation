@@ -5,7 +5,7 @@ public class Card {
     public enum Rank {ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, QUEEN, JACK, KING, HIDDEN}
     boolean faceUp;
 
-    public Card(boolean facecUp) {
+    public Card(boolean facecUp, Suit suit, Rank rank) {
         this.faceUp = faceUp;
     }
 
