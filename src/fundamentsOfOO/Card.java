@@ -1,12 +1,11 @@
 package fundamentsOfOO;
 
 public class Card {
-    String suit, rank;
+    public enum Suit {DIAMONDS, SPACES, CLUBS, HEARTS, HIDDEN}
+    public enum Rank {ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, QUEEN, JACK, KING, HIDDEN}
     boolean faceUp;
 
-    public Card(String suit, String rank, boolean facecUp) {
-        this.suit = suit;
-        this.rank = rank;
+    public Card(boolean facecUp) {
         this.faceUp = faceUp;
     }
 
