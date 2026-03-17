@@ -7,9 +7,12 @@ public class Card {
 
     public Card(boolean facecUp, Suit suit, Rank rank) {
         this.faceUp = faceUp;
+        suit = suit;
+        rank = rank;
+
     }
 
-    String ifFaceUp(String suit, String rank, boolean faceUp) {
+    String ifFaceUp(boolean faceUp) {
         String output = null;
 
         if(faceUp)

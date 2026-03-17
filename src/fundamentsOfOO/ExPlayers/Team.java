@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Team {
     private String name, baseLocation, coachName;
     private ArrayList<Player> players = new ArrayList<>();
+    private Player captain;
 
     public Team() {}
 
@@ -36,15 +37,11 @@ public class Team {
     }
 
     public void setCapitain(Player captain) {
-
+        this.captain = captain;
     }
 
-    public ArrayList<Player> getFieldedPlayes() {
+    //public ArrayList<Player> getFieldedPlayes() {}
 
-    }
-
-    public ArrayList<Player> getOutfieldedPlayers() {
-
-    }
+    //public ArrayList<Player> getOutfieldedPlayers() {}
 
 }
