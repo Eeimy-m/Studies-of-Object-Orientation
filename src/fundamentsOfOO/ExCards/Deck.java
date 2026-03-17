@@ -1,4 +1,4 @@
-package fundamentsOfOO;
+package fundamentsOfOO.ExCards;
 
 public class Deck {
 

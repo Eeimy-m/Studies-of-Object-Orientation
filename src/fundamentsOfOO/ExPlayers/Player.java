@@ -1,4 +1,4 @@
-package fundamentsOfOO;
+package fundamentsOfOO.ExPlayers;
 
 public class Player {
     private String name, position;
