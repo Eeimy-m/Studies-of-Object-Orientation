@@ -22,4 +22,20 @@ public class Player {
         else
             return  "Not Fielded";
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String position() {
+        return position;
+    }
+
+    public int number() {
+        return number;
+    }
+
+    public boolean isFielded() {
+        return isFielded;
+    }
 }
