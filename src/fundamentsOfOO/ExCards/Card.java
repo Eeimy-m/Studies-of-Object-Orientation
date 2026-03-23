@@ -15,7 +15,7 @@ public class Card {
         // TODO evite deixar espaços em branco desnecessários.
     }
 
-    // TODO desenvolver o método public String asString() que retorna o estado do objeto como string. Por exemplo, algo como "K de Paus aberto" / "5 de Ouros fechado".
+    // TODO desenvolver o método public String asString() que retorna o estado do objeto como string. Por exemplo, algo como "K de Paus aberto" / "5 de Ouros fechado". (ok)
     // TODO métodos getter retornam o mesmo tipo do atributo e não devem receber parâmetro
     public String asString(boolean faceUp, CardSuit suit, CardRank rank) {
         String output = null;
