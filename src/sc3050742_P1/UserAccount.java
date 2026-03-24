@@ -35,6 +35,15 @@ public class UserAccount {
         numOfTimelinePosts++;
     }
 
+    public boolean delete(int postIndex) {
+        if(postIndex < 0 || postIndex >= numOfMyPosts) return false;
+
+        myPosts[postIndex] = myPosts[numOfMyPosts-1];
+        myPosts[numOfMyPosts-1] = null;
+        numOfMyPosts--;
+        return true;
+    }
+
     public String getUserName() {
         return userName;
     }
