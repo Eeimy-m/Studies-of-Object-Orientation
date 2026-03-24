@@ -19,6 +19,22 @@ public class UserAccount {
         this.userName = userName;
     }
 
+    public void publish(String quote) {
+        final Post post = new Post(this, quote);
+
+        myPosts[numOfMyPosts++] = post;
+
+        for (int i = 0; i < numOfFollowers; i++) {
+            UserAccount follower = followers[i];
+            follower.updateTimeline(post);
+        }
+    }
+
+    public void updateTimeline(Post post) {
+        timeline[numOfTimelinePosts % 10] = post;
+        numOfTimelinePosts++;
+    }
+
     public String getUserName() {
         return userName;
     }
