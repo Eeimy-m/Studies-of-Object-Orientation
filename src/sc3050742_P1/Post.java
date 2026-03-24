@@ -6,6 +6,13 @@ public class Post {
     private LocalDateTime timesTamp;
     private int clap;
     private int boo;
+    private UserAccount userAccount;
+
+    public Post(UserAccount user, String quote) {
+        this.userAccount = user;
+        this.quote = quote;
+        this.timesTamp = LocalDateTime.now();
+    }
 
     public String getQuote() {
         return quote;
@@ -21,5 +28,9 @@ public class Post {
 
     public int getBoo() {
         return boo;
+    }
+
+    public String getUserName() {
+        return userAccount.getUserName();
     }
 }
