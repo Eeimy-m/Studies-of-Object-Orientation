@@ -39,8 +39,13 @@ public class Team {
     }
 
     public void setCaptain(Player captain) {
-        // TODO antes, veja se o capitão faz parte do time. =D
-        this.captain = captain;
+        for(Player player: team) {
+            if (player == captain) {
+                this.captain = captain;
+                break;
+            }
+        }
+        //Como faço caso o captain não faça parte da equipe?
     }
 
     //public ArrayList<Player> getFieldedPlayes() {} // TODO retorna um array apenas com os jogadores com isFielded true
