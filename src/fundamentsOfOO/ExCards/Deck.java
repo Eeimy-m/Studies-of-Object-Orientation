@@ -1,12 +1,40 @@
 package fundamentsOfOO.ExCards;
 
 public class Deck {
-    Card[] cards = new Card[52];
+    public static final int NUMBER_OF_CARDS = 52;
+    private Card[] cards = new Card[NUMBER_OF_CARDS];
+    private int cont;
 
-    public Deck(Card[] cards) {
-        this.cards = cards;
+    public Deck() {
+        createCards();
     }
 
+    private void createCards() {
+        for (Card.CardRank rank : Card.CardRank.values()) {
+            for(Card.CardSuit suit : Card.CardSuit.values()) {
+                cards[cont] = new Card(true, suit, rank);
+                cont++;
+            }
+        }
+    }
+
+    public Card takeOne() {
+        Card card = cards[cont - 1];
+        cards[cont - 1] = null;
+        cont--;
+        return card;
+    }
+    
+    public Card[] takeMany(int quantity) {
+        Card[] cardsToReturn = new Card[quantity];
+        
+        for(int i = 0; i < quantity; i++) {
+            cardsToReturn[i] = takeOne();
+        }
+        
+        return cardsToReturn;
+    }
+    
     public Card[] getCards() {
         return cards;
     }
