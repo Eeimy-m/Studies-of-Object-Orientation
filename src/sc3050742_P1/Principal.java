@@ -10,8 +10,8 @@ public class Principal {
         factory.publish("Bigodes são legais");
 
         System.out.println("Estado do factory:");
-        System.out.println(factory.);
-        System.out.println(factory);
-        System.out.println(factory);
+//        System.out.println(factory.);
+//        System.out.println(factory);
+//        System.out.println(factory);
     }
 }

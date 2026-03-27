@@ -1,7 +1,5 @@
 package fundamentsOfOO.ExPlayers;
 
-import java.util.ArrayList;
-
 public class Team {
     private String name, baseLocation, coachName;
     private Player captain;
@@ -13,14 +11,14 @@ public class Team {
     private final int OUT_FIELDED_PLAYERS = 7;
     private int cont;
 
-    public Team(String name, String baseLocation, String coachName) {
+    public Team(String name, String baseLocation, String coachName, Player captain) {
         this.name = name;
         this.baseLocation = baseLocation;
         this.coachName = coachName;
+        //this.captain = setCaptain(captain); O código está indicando erro nessa linha
         this.team = new Player[PLAYERS_IN_TEAM];
         this.fieldedPlayers = new Player[FIELDED_PLAYERS];
         this.outFieldedPlayers = new Player[OUT_FIELDED_PLAYERS];
-        //Defino o captain aqui?
     }
 
     public Player[] addPlayer(Player player) {
@@ -58,7 +56,10 @@ public class Team {
         int contFielded = 0;
 
         for (Player player : team) {
-            if (player.isFielded()) fieldedPlayers[contFielded++] = player;
+            if (player.isFielded()) {
+                fieldedPlayers[contFielded] = player;
+                contFielded++;
+            }
         }
 
         return fieldedPlayers;
@@ -68,7 +69,10 @@ public class Team {
         int contOutFielded = 0;
 
         for (Player player : team) {
-            if (!player.isFielded()) outFieldedPlayers[contOutFielded++] = player;
+            if (!player.isFielded()) {
+                outFieldedPlayers[contOutFielded] = player;
+                contOutFielded++;
+            }
         }
 
         return outFieldedPlayers;

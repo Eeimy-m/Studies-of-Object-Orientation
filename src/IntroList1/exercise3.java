@@ -13,28 +13,28 @@
     Exemplo 5: Entrada = 0 | Saída = Erro
 */
 
-void main() {
-    int ano;
-    Scanner scanner = new Scanner(System.in);
-
-    System.out.println("Insira um ano: ");
-    ano = scanner.nextInt();
-
-    if(ano > 0)
-        System.out.println(verificarAno(ano));
-    else
-        System.out.println("Erro");
-}
-
-String verificarAno(int ano) {
-    String output = null;
-
-    if(ano % 400 == 0)
-        output = "Ano bissexto";
-    else if(ano % 4 == 0 && ano % 100 != 0)
-        output = "Ano bissexto";
-    else
-        output = "Ano nao bissexto";
-
-    return  output;
-}
+//void main() {
+//    int ano;
+//    Scanner scanner = new Scanner(System.in);
+//
+//    System.out.println("Insira um ano: ");
+//    ano = scanner.nextInt();
+//
+//    if(ano > 0)
+//        System.out.println(verificarAno(ano));
+//    else
+//        System.out.println("Erro");
+//}
+//
+//String verificarAno(int ano) {
+//    String output = null;
+//
+//    if(ano % 400 == 0)
+//        output = "Ano bissexto";
+//    else if(ano % 4 == 0 && ano % 100 != 0)
+//        output = "Ano bissexto";
+//    else
+//        output = "Ano nao bissexto";
+//
+//    return  output;
+//}

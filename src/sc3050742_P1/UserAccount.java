@@ -72,19 +72,18 @@ public class UserAccount {
         }
     }
 
-    public String timelineAsString() {
-        final StringBuilder builder = new StringBuilder()
-    }
+//    public String timelineAsString() {
+//        final StringBuilder builder = new StringBuilder();
+//    }
 
-    public String myPostsAsString() {
-        final StringBuilder builder = new StringBuilder("Timeline: ");
-
-        for (int i = 0; i < numOfTimelinePosts; i++) {
-            Post posts = myPosts[i];
-            builder.append(posts.getAsString()).append("\n");
-
-        }
-    }
+//    public String myPostsAsString() {
+//        final StringBuilder builder = new StringBuilder("Timeline: ");
+//
+//        for (int i = 0; i < numOfTimelinePosts; i++) {
+//            Post posts = myPosts[i];
+//            builder.append(posts.getAsString()).append("\n");
+//        }
+//    }
 
     public void acceptFollower(UserAccount newFollower) {
         followers[numOfFollowers++] = newFollower;
