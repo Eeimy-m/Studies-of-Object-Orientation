@@ -3,41 +3,39 @@ import java.util.ArrayList;
 
 public class Team {
     private String name, baseLocation, coachName;
-    private ArrayList<Player> players = new ArrayList<>(); // TODO Usar arrays, não lists. Na P1 você não poderá usar Lists.
     private Player captain;
-
-    public Team() {}
+    private Player[] team;
+    private final int PLAYERS_IN_TEAM = 18;
+    private int cont;
 
     public Team(String name, String baseLocation, String coachName) {
         this.name = name;
         this.baseLocation = baseLocation;
         this.coachName = coachName;
-        this.players = new ArrayList<>(); // TODO no caso do array, 18 posições.
+        this.team = new Player[PLAYERS_IN_TEAM];
+        //Defino o captain aqui?
     }
 
-    public void addPlayer(Player player) {
-        // TODO você só pode adicionar 11 em campo e 7 no banco.
-        if(players.size() < 18)
-            players.add(player);
-        else
-            System.out.println("The team is already full."); // TODO retorne, mas não imprima nada dentro de classes do domínio. Deixe I/O para o Main apenas.
+    public Player[] addPlayer(Player player) {
+        for (int i = 0; i < PLAYERS_IN_TEAM; i++) {
+            team[i] = player;
+            cont++;
+        }
+
+        return team;
     }
 
-    public void removePlayer(Player player) {
-        // TODO alterar a lógica para arrays, não esquecendo de limpar o array.
-        if(players.size() > 0)
-            players.remove(player);
-        else
-            System.out.println("The team is empty.");
+    //Pode ser como nas cartas? Remover o último do array e ir decrementando? Ou precisa receber qual o player a ser removido?
+    public Player removePlayer() {
+        Player playerToRemove = team[cont - 1];
+        team[cont - 1] = null;
+        cont--;
+        return playerToRemove;
     }
 
     public void substitute(Player substitute, Player starter) {
-        if (players.contains(substitute) && players.contains(starter)) {
-
-        }
-
-        // TODO alterar a lógica para array. Mudar o estado do Player que é starter para banco (fielded false)
-        //  e do que é substituto para fielded.
+        starter.notFielded();
+        substitute.Fielded();
     }
 
     public void setCaptain(Player captain) {

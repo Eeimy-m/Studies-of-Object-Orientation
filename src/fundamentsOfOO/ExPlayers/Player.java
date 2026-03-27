@@ -33,6 +33,7 @@ public class Player {
         return isFielded;
     }
 
+    //Achei que não faz sentido fazer setters para name, position e number. Está correto?
     public void Fielded() {
         isFielded = true;
     }
