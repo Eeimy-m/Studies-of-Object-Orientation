@@ -49,13 +49,13 @@ public class Main {
         Player[] fieldedPlayers = new Player[11];
         fieldedPlayers = time1.getFieldedPlayers();
         for(int i = 0; i < 11; i++) {
-            System.out.println(fieldedPlayers[i]);
+            System.out.println(fieldedPlayers[i].getStateAsString());
         }
 
         Player[] outFieldedPlayers = new Player[7];
         outFieldedPlayers = time1.getOutfieldedPlayers();
         for(int i = 0; i < 7; i++) {
-            System.out.println(outFieldedPlayers[i]);
+            System.out.println(outFieldedPlayers[i].getStateAsString());
         }
     }
 }
