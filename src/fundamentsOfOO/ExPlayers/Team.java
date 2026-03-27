@@ -17,8 +17,6 @@ public class Team {
         this.coachName = coachName;
         //this.captain = setCaptain(captain); O código está indicando erro nessa linha
         this.team = new Player[PLAYERS_IN_TEAM];
-        this.fieldedPlayers = new Player[FIELDED_PLAYERS];
-        this.outFieldedPlayers = new Player[OUT_FIELDED_PLAYERS];
     }
 
     public Player[] addPlayer(Player player) {
@@ -53,10 +51,11 @@ public class Team {
     }
 
     public Player[] getFieldedPlayers() {
+        this.fieldedPlayers = new Player[FIELDED_PLAYERS];
         int contFielded = 0;
 
         for (Player player : team) {
-            if (player.isFielded()) {
+            if (player.isFielded() && contFielded < FIELDED_PLAYERS) {
                 fieldedPlayers[contFielded] = player;
                 contFielded++;
             }
@@ -66,6 +65,7 @@ public class Team {
     }
 
     public Player[] getOutfieldedPlayers() {
+        this.outFieldedPlayers = new Player[OUT_FIELDED_PLAYERS];
         int contOutFielded = 0;
 
         for (Player player : team) {
