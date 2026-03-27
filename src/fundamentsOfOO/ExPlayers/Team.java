@@ -5,7 +5,9 @@ public class Team {
     private String name, baseLocation, coachName;
     private Player captain;
     private Player[] team;
+    private Player[] fieldedPlayers;
     private final int PLAYERS_IN_TEAM = 18;
+    private final int FIELDED_PLAYERS = 11;
     private int cont;
 
     public Team(String name, String baseLocation, String coachName) {
@@ -39,16 +41,25 @@ public class Team {
     }
 
     public void setCaptain(Player captain) {
-        for(Player player: team) {
-            if (player == captain) {
+        for(Player player : team) {
+            if(player == captain) {
                 this.captain = captain;
                 break;
             }
         }
-        //Como faço caso o captain não faça parte da equipe?
     }
 
-    //public ArrayList<Player> getFieldedPlayes() {} // TODO retorna um array apenas com os jogadores com isFielded true
+    public Player[] getFieldedPlayes() {
+        fieldedPlayers = new Player[FIELDED_PLAYERS];
+        int contFielded = 0;
+
+        for (Player player : team) {
+            if(player.isFielded() == true)
+                fieldedPlayers[contFielded++] = player;
+        }
+
+        return fieldedPlayers;
+    }
 
     //public ArrayList<Player> getOutfieldedPlayers() {} // TODO retorna um array apenas com os jogadores com isFielded false
 
