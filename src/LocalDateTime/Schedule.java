@@ -51,10 +51,9 @@ public class Schedule {
         }
     }
 
-//    public double percentageSpentInMeetings() {
-//
-//    }
-//
+//    public double percentageSpentInMeetings() {}
+//    Não entendi muito bem essa função
+
     public String scheduleAsString() {
         return String.format("%s %s %s", day, startTime, endTime);
     }
