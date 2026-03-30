@@ -19,13 +19,9 @@ public class Team {
         this.team = new Player[PLAYERS_IN_TEAM];
     }
 
-    public Player[] addPlayer(Player player) {
-        for (int i = 0; i < PLAYERS_IN_TEAM; i++) {
-            team[i] = player;
-            cont++;
-        }
-
-        return team;
+    public void addPlayer(Player player) {
+        team[cont] = player;
+        cont++;
     }
 
     //Pode ser como nas cartas? Remover o último do array e ir decrementando? Ou precisa receber qual o player a ser removido?
@@ -51,7 +47,7 @@ public class Team {
     }
 
     public Player[] getFieldedPlayers() {
-        this.fieldedPlayers = new Player[FIELDED_PLAYERS];
+        fieldedPlayers = new Player[FIELDED_PLAYERS];
         int contFielded = 0;
 
         for (Player player : team) {
@@ -65,11 +61,11 @@ public class Team {
     }
 
     public Player[] getOutfieldedPlayers() {
-        this.outFieldedPlayers = new Player[OUT_FIELDED_PLAYERS];
+        outFieldedPlayers = new Player[OUT_FIELDED_PLAYERS];
         int contOutFielded = 0;
 
         for (Player player : team) {
-            if (!player.isFielded()) {
+            if (player.isFielded() == false) {
                 outFieldedPlayers[contOutFielded] = player;
                 contOutFielded++;
             }

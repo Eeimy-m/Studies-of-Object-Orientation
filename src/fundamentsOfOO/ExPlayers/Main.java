@@ -42,10 +42,6 @@ public class Main {
         time1.addPlayer(beatrizSuman);
         time1.addPlayer(paolaRosa);
 
-        time1.substitute(paolaRosa, joaoSilva);
-        time1.substitute(beatrizSuman, pedroSantos);
-        time1.substitute(vitoriaOrnellas, rafaelCosta);
-
         Player[] fieldedPlayers = new Player[11];
         fieldedPlayers = time1.getFieldedPlayers();
         for(int i = 0; i < 11; i++) {
