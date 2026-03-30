@@ -15,4 +15,16 @@ public class Meeting {
     public long durationInMinutes() {
         return endTime.getMinute() -  startTime.getMinute();
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
 }
