@@ -1,4 +1,4 @@
-package sc3050742_P1;
+package SimulatedTest1;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 

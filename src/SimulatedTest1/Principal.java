@@ -1,4 +1,4 @@
-package sc3050742_P1;
+package SimulatedTest1;
 
 public class Principal {
     static void main() {
