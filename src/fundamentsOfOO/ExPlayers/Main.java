@@ -20,6 +20,7 @@ public class Main {
         Player vitoriaOrnellas = new Player("Vitoria Ornellas", "Ataque", 80, false);
         Player beatrizSuman = new Player("Beatriz Suman", "Suporte", 44, false);
         Player paolaRosa = new Player("Paola Rosa", "Ataque", 12, false);
+        Player ArturPenetra = new Player("Artur Penetra", "Ataque", 9, false);
 
         Team time1 = new Team("Time 1", "base 1", "Treinador 1", elisa);
         time1.addPlayer(elisa);
@@ -44,18 +45,22 @@ public class Main {
         time1.substitute(paolaRosa, joaoSilva);
         time1.substitute(vitoriaOrnellas, pedroSantos);
         time1.substitute(beatrizSuman, rafaelCosta);
+        time1.substitute(lucasOliveira, ArturPenetra);
 
-        time1.setCaptain(elisa);
+        time1.removePlayer(elisa);
+//        time1.setCaptain(elisa);
 
         Player[] fieldedPlayers = new Player[11];
         fieldedPlayers = time1.getFieldedPlayers();
         for(int i = 0; i < 11; i++) {
+            if(fieldedPlayers[i] == null) continue;
             System.out.println(fieldedPlayers[i].getStateAsString());
         }
 
         Player[] outFieldedPlayers = new Player[7];
         outFieldedPlayers = time1.getOutfieldedPlayers();
         for(int i = 0; i < 7; i++) {
+            if(outFieldedPlayers[i] == null) continue;
             System.out.println(outFieldedPlayers[i].getStateAsString());
         }
     }

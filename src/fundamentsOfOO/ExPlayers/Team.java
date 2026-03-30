@@ -1,7 +1,6 @@
 package fundamentsOfOO.ExPlayers;
 
 public class Team {
-    //TODO deixe sempre as constantes no topo, antes dos atributos.
     private final int PLAYERS_IN_TEAM = 18;
     private final int FIELDED_PLAYERS = 11;
     private final int OUT_FIELDED_PLAYERS = 7;
@@ -27,26 +26,51 @@ public class Team {
         cont++;
     }
 
-    //Pode ser como nas cartas? Remover o último do array e ir decrementando? Ou precisa receber qual o player a ser removido?
-    //TODO como na UML. Você tem que saber que jogador vai tirar, não pode ser qualquer um.
-    public Player removePlayer() {
-        Player playerToRemove = team[cont - 1];
-        team[cont - 1] = null;
-        cont--;
-        return playerToRemove;
+    public void removePlayer(Player player) {
+        int counter = -1;
+        for(int i = 0; i < cont; i++) {
+            if(team[i] != player) {
+                counter++;
+                break;
+            }
+        }
+
+        if(counter >= 0) {
+            team[counter] = team[cont - 1];
+            team[cont - 1] = null;
+            System.out.println("Player removed");
+            cont--;
+        }
     }
 
     public void substitute(Player substitute, Player starter) {
-        //TODO precisa verificar se ambos pertencem ao time
-        starter.notFielded();
-        substitute.Fielded();
+        boolean foundSubstitute = false;
+        boolean foundStarter = false;
+
+        for(int i = 0; i < cont && !foundSubstitute; i++) {
+            if(team[i] == substitute) {
+                foundSubstitute = true;
+            }
+        }
+
+        for(int i = 0; i < cont && !foundStarter; i++) {
+            if(team[i] == starter) {
+                foundStarter = true;
+            }
+        }
+
+        if(foundStarter && foundSubstitute) {
+            starter.bringOff();
+            substitute.bringOn();
+            System.out.println("Substituição feita");
+        }
     }
 
     public void setCaptain(Player captain) {
-        for (Player player : team) {
-            if (player == captain) {
+        for(int i = 0; i < cont; i++) {
+            if(team[i] == captain) {
                 this.captain = captain;
-                break;
+                return;
             }
         }
     }
@@ -55,9 +79,9 @@ public class Team {
         fieldedPlayers = new Player[FIELDED_PLAYERS];
         int contFielded = 0;
 
-        for (Player player : team) {
-            if (player.isFielded() && contFielded < FIELDED_PLAYERS) {
-                fieldedPlayers[contFielded] = player;
+        for(int i = 0; i < cont; i++) {
+            if (team[i].isFielded() && contFielded < FIELDED_PLAYERS) {
+                fieldedPlayers[contFielded] = team[i];
                 contFielded++;
             }
         }
@@ -69,9 +93,9 @@ public class Team {
         outFieldedPlayers = new Player[OUT_FIELDED_PLAYERS];
         int contOutFielded = 0;
 
-        for (Player player : team) {
-            if (!player.isFielded()) {
-                outFieldedPlayers[contOutFielded] = player;
+        for(int i = 0; i < cont; i++) {
+            if (!team[i].isFielded()) {
+                outFieldedPlayers[contOutFielded] = team[i];
                 contOutFielded++;
             }
         }
