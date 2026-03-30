@@ -17,7 +17,7 @@ public class Team {
         this.name = name;
         this.baseLocation = baseLocation;
         this.coachName = coachName;
-        this.captain = captain; //TODO setter não retorna nada, getter retorna. O setCapitan lá embaixo é para trocar o capitão
+        this.captain = captain;
         this.team = new Player[PLAYERS_IN_TEAM];
     }
 
@@ -38,7 +38,7 @@ public class Team {
         if(counter >= 0) {
             team[counter] = team[cont - 1];
             team[cont - 1] = null;
-            System.out.println("Player removed");
+//            System.out.println("Player removed");
             cont--;
         }
     }
@@ -62,7 +62,7 @@ public class Team {
         if(foundStarter && foundSubstitute) {
             starter.bringOff();
             substitute.bringOn();
-            System.out.println("Substituição feita");
+//            System.out.println("Substituição feita");
         }
     }
 
@@ -73,6 +73,7 @@ public class Team {
                 return;
             }
         }
+//        System.out.println("the player is not part of the team");
     }
 
     public Player[] getFieldedPlayers() {

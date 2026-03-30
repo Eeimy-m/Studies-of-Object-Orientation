@@ -48,7 +48,7 @@ public class Main {
         time1.substitute(lucasOliveira, ArturPenetra);
 
         time1.removePlayer(elisa);
-//        time1.setCaptain(elisa);
+        time1.setCaptain(elisa);
 
         Player[] fieldedPlayers = new Player[11];
         fieldedPlayers = time1.getFieldedPlayers();
