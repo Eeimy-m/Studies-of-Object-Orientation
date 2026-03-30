@@ -10,6 +10,6 @@ public class Round {
     }
 
     public String getWinner() {
-
+        return winner;
     }
 }

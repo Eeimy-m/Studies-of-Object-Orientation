@@ -21,13 +21,13 @@ public class Hand {
 
     }
 
-    public boolean isDone() {
-
-    }
-
-    public String getWinner() {
-
-    }
+//    public boolean isDone() {
+//
+//    }
+//
+//    public String getWinner() {
+//
+//    }
 
     public Card getCard() {
         return hand;

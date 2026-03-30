@@ -7,20 +7,25 @@ public class Player {
     private String name;
     private int score;
     private Card[] cards;
+    private int cardsCont;
 
     public Player(String name) {
-        this.cards = new Card[QUANT_OF_CARDS];
         this.name = name;
     }
 
-    public Card cooseCard() {
-        //retorna uma das cartas, não
-        //deixando-a disponível para ser jogada novamente durante a mesma mão.
+    public void setCards(Card[] cards) {
+        this.cards = cards;
+        this.cardsCont = QUANT_OF_CARDS;
+    }
 
+    public Card cooseCard() {
+        int cardIndex = cardsCont - 1;
+        cardsCont--;
+        return cards[cardIndex];
     }
 
     public void incremetScore() {
-
+        score++;
     }
 
     public String getName() {
@@ -33,9 +38,5 @@ public class Player {
 
     public Card[] getCards() {
         return cards;
-    }
-
-    public void setCards(Card[] cards) {
-        this.cards = cards;
     }
 }
