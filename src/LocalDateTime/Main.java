@@ -16,6 +16,12 @@ public class Main {
                 LocalTime.of(11,30)
         );
 
+        Meeting meeting3 = new Meeting(
+                "Reunião 3 lab 107",
+                LocalTime.of(7, 30),
+                LocalTime.of(8,30)
+        );
+
         Schedule schedule1 = new Schedule(
                 LocalDate.of(2026, 3, 30),
                 LocalTime.of(8, 0),
@@ -24,6 +30,7 @@ public class Main {
 
         schedule1.addMeeting(meeting1);
         schedule1.addMeeting(meeting2);
+        schedule1.addMeeting(meeting3);
         schedule1.removeMeeting(meeting1);
     }
 }

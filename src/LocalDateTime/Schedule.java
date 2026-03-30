@@ -24,8 +24,11 @@ public class Schedule {
                 boolean conflict = meeting.getStartTime().isBefore(meetingScheduled.getEndTime()) &&
                         meeting.getEndTime().isAfter(meetingScheduled.getStartTime());
 
-                if(conflict)
+                boolean insideTimeLimit = meeting.getStartTime().isAfter(startTime) && meeting.getEndTime().isBefore(endTime);
+
+                if(conflict || !insideTimeLimit) {
                     return;
+                }
             }
         }
 
