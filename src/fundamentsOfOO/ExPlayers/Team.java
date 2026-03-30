@@ -1,14 +1,17 @@
 package fundamentsOfOO.ExPlayers;
 
 public class Team {
-    private String name, baseLocation, coachName;
-    private Player captain;
-    private Player[] team;
-    private Player[] fieldedPlayers;
-    private Player[] outFieldedPlayers;
+    //TODO deixe sempre as constantes no topo, antes dos atributos.
     private final int PLAYERS_IN_TEAM = 18;
     private final int FIELDED_PLAYERS = 11;
     private final int OUT_FIELDED_PLAYERS = 7;
+
+    private String name, baseLocation, coachName;
+    private Player captain;
+
+    private Player[] team;
+    private Player[] fieldedPlayers;
+    private Player[] outFieldedPlayers;
     private int cont;
 
     public Team(String name, String baseLocation, String coachName, Player captain) {
@@ -16,6 +19,7 @@ public class Team {
         this.baseLocation = baseLocation;
         this.coachName = coachName;
         //this.captain = setCaptain(captain); O código está indicando erro nessa linha
+        this.captain = captain; //TODO setter não retorna nada, getter retorna. O setCapitan lá embaixo é para trocar o capitão
         this.team = new Player[PLAYERS_IN_TEAM];
     }
 
@@ -25,6 +29,7 @@ public class Team {
     }
 
     //Pode ser como nas cartas? Remover o último do array e ir decrementando? Ou precisa receber qual o player a ser removido?
+    //TODO como na UML. Você tem que saber que jogador vai tirar, não pode ser qualquer um.
     public Player removePlayer() {
         Player playerToRemove = team[cont - 1];
         team[cont - 1] = null;
@@ -33,6 +38,7 @@ public class Team {
     }
 
     public void substitute(Player substitute, Player starter) {
+        //TODO precisa verificar se ambos pertencem ao time
         starter.notFielded();
         substitute.Fielded();
     }
@@ -65,7 +71,7 @@ public class Team {
         int contOutFielded = 0;
 
         for (Player player : team) {
-            if (player.isFielded() == false) {
+            if (player.isFielded() == false) { // TODO não faz sentido fazer comparação com == true ou false se o próprio método chamado já é booleano. Deveria ser simplesmente if(!player.isFielded())
                 outFieldedPlayers[contOutFielded] = player;
                 contOutFielded++;
             }
@@ -73,4 +79,7 @@ public class Team {
 
         return outFieldedPlayers;
     }
+
+
+    // TODO faltaram os getters. Note que no topo os atributos estão cinzas, porque não são usados em lugar algum.
 }

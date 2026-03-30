@@ -25,6 +25,7 @@ public class Player {
         return position;
     }
 
+    //TODO getNumber
     public int number() {
         return number;
     }
@@ -34,10 +35,12 @@ public class Player {
     }
 
     //Achei que não faz sentido fazer setters para name, position e number. Está correto?
+    //TODO bringOn() - colocar em campo
     public void Fielded() {
         isFielded = true;
     }
 
+    //TODO bringOff() - tirar de campo
     public void notFielded() {
         isFielded = false;
     }
