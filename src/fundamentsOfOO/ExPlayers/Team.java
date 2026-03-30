@@ -18,7 +18,6 @@ public class Team {
         this.name = name;
         this.baseLocation = baseLocation;
         this.coachName = coachName;
-        //this.captain = setCaptain(captain); O código está indicando erro nessa linha
         this.captain = captain; //TODO setter não retorna nada, getter retorna. O setCapitan lá embaixo é para trocar o capitão
         this.team = new Player[PLAYERS_IN_TEAM];
     }
@@ -71,7 +70,7 @@ public class Team {
         int contOutFielded = 0;
 
         for (Player player : team) {
-            if (player.isFielded() == false) { // TODO não faz sentido fazer comparação com == true ou false se o próprio método chamado já é booleano. Deveria ser simplesmente if(!player.isFielded())
+            if (!player.isFielded()) {
                 outFieldedPlayers[contOutFielded] = player;
                 contOutFielded++;
             }
@@ -80,6 +79,19 @@ public class Team {
         return outFieldedPlayers;
     }
 
+    public String getName() {
+        return name;
+    }
 
-    // TODO faltaram os getters. Note que no topo os atributos estão cinzas, porque não são usados em lugar algum.
+    public String getBaseLocation() {
+        return baseLocation;
+    }
+
+    public String getCoachName() {
+        return coachName;
+    }
+
+    public Player getCaptain() {
+        return captain;
+    }
 }
