@@ -1,4 +1,5 @@
 package LocalDateTime;
+import java.time.Duration;
 import java.time.LocalTime;
 
 public class Meeting {
@@ -13,7 +14,7 @@ public class Meeting {
     }
 
     public long durationInMinutes() {
-        return endTime.getMinute() -  startTime.getMinute();
+        return Duration.between(startTime, endTime).toMinutes();
     }
 
     public String getDescription() {

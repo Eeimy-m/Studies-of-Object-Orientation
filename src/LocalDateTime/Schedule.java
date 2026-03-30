@@ -52,9 +52,9 @@ public class Schedule {
 //
 //    }
 //
-//    public String  scheduleAsString() {
-//
-//    }
+    public String scheduleAsString() {
+        return String.format("%s %s %s", day, startTime, endTime);
+    }
 
     public LocalDate getDay() {
         return day;

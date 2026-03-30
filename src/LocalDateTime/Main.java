@@ -24,6 +24,6 @@ public class Main {
 
         schedule1.addMeeting(meeting1);
         schedule1.addMeeting(meeting2);
-//        schedule1.removeMeeting(meeting1);
+        schedule1.removeMeeting(meeting1);
     }
 }
