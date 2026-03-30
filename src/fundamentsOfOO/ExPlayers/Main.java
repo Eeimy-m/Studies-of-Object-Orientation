@@ -1,7 +1,6 @@
 package fundamentsOfOO.ExPlayers;
 
 public class Main {
-    // TODO no main, instanciar jogadores, colocar em um time, fazer substituições e imprimir as listas de campo e banco.
     static void main() {
         Player elisa = new Player("Elisa", "Ataque", 10, true);
         Player joaoSilva = new Player("João Silva", "Suporte", 1, true);
@@ -41,6 +40,12 @@ public class Main {
         time1.addPlayer(vitoriaOrnellas);
         time1.addPlayer(beatrizSuman);
         time1.addPlayer(paolaRosa);
+
+        time1.substitute(paolaRosa, joaoSilva);
+        time1.substitute(vitoriaOrnellas, pedroSantos);
+        time1.substitute(beatrizSuman, rafaelCosta);
+
+        time1.setCaptain(elisa);
 
         Player[] fieldedPlayers = new Player[11];
         fieldedPlayers = time1.getFieldedPlayers();
