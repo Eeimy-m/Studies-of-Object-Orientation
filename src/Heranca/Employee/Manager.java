@@ -1,8 +1,8 @@
-package Heranca;
+package Heranca.Employee;
 
 import java.time.LocalDate;
 
-public final class Manager extends Employee{
+public final class Manager extends Employee {
     private String department;
 
     public Manager(String id, String name, String jobTitle, double salary, LocalDate dateOfEmployment, String department) {

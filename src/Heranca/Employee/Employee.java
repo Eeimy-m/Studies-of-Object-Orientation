@@ -1,7 +1,7 @@
-package Heranca;
+package Heranca.Employee;
+
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Objects;
 
 public sealed class Employee permits Manager {
     private String id;
