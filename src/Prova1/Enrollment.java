@@ -12,9 +12,9 @@ public class Enrollment {
         this.enrollmentTime = enrollmentTime;
     }
 
-    public boolean enroll(Course course) {
-
-    }
+//    public boolean enroll(Course course) {
+//
+//    }
 
     public  void remove(Course course) {
 
@@ -24,9 +24,9 @@ public class Enrollment {
 
     }
 
-    public String getStateAsString() {
-
-    }
+//    public String getStateAsString() {
+//
+//    }
 
     public int getId() {
         return id;
