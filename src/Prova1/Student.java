@@ -6,8 +6,17 @@ public class Student {
     private String id;
     private String name;
     private LocalDate admissionDate;
+    private Enrollment[] enrollments;
 
     public Student(String id, String name, LocalDate admissionDate) {
+//        char[] idCharArray = id.toCharArray();
+//        char[] SC = (id.substring(0,2)).toCharArray();
+//        int numbersOfId = Integer.parseInt(id.substring(2,8));
+
+//        if(idCharArray.length != 9) {
+//            return;
+//        }
+
         this.id = id;
         this.name = name;
         this.admissionDate = admissionDate;
