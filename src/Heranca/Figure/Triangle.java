@@ -12,9 +12,11 @@ public final class Triangle extends Figure {
         this.c = c;
     }
 
-//    @Override
-//    public double area() {
-//    }
+    @Override
+    public double area() {
+        double h = Math.sqrt(a * a - (c/2) * (c/2));
+        return (c * h)/2;
+    }
 
     public double getA() {
         return a;
