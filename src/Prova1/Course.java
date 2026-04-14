@@ -1,6 +1,7 @@
 package Prova1;
 
 import java.time.DayOfWeek;
+import java.time.Duration;
 import java.time.LocalTime;
 
 public class Course {
@@ -16,11 +17,11 @@ public class Course {
     private Room room;
 
     public Course(LocalTime startTime, LocalTime endTime, String name, String code, String professor, DayOfWeek dayOfWeek, Room room) {
-        if(endTime == null || startTime == null || name == null || code == null || professor == null || dayOfWeek == null) {
+        if(endTime == null || startTime == null || !isValidString(name) || !isValidString(code) || professor == null || dayOfWeek == null) {
             return;
         }
 
-        this.id++;
+        id++;
         this.startTime = startTime;
         this.endTime = endTime;
         this.name = name;
@@ -30,8 +31,12 @@ public class Course {
         this.room = room;
     }
 
+    private boolean isValidString(String string) {
+        return string != null && !string.isBlank();
+    }
+
     public int getWeeklyDurationInMinutes() {
-        return (endTime.getHour() - startTime.getHour()) * 60 + (endTime.getMinute() - startTime.getMinute());
+        return (int) Duration.between(startTime, endTime).toMinutes();
     }
 
     public String getStateAsString() {

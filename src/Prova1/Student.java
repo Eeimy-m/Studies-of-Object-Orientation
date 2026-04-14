@@ -1,48 +1,38 @@
 package Prova1;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Student {
     private String id;
     private String name;
     private LocalDate admissionDate;
-    private Enrollment[] enrollments;
 
     public Student(String id, String name, LocalDate admissionDate) {
-//        char[] idCharArray = id.toCharArray();
-//        char[] SC = (id.substring(0,2)).toCharArray();
-//        int numbersOfId = Integer.parseInt(id.substring(2,8));
 
-//        if(idCharArray.length != 9) {
-//            return;
-//        }
 
         this.id = id;
         this.name = name;
         this.admissionDate = admissionDate;
     }
 
+    private boolean isValidId(String id) {
+        String idToUpperCase = id.toUpperCase();
+
+        if(idToUpperCase.length() != 9) return false;
+        if(!idToUpperCase.startsWith("SC")) return false;
+
+        char lastChar = idToUpperCase.charAt(8);
+        if(lastChar != 'X' || !Character.isDigit(lastChar)) return false;
+
+        for(int i = 2; i < 9; i++) {
+            if(!Character.isDigit(idToUpperCase.charAt(i))) return false;
+        }
+        return true;
+    }
+
     public int getSemester() {
-        int currentYear = LocalDate.now().getYear();
-        int currentMonth = LocalDate.now().getMonthValue();
-        int yearsOfDifference = currentYear - admissionDate.getYear();
-
-        if(currentMonth > 6) {
-            currentMonth = 2;
-        }
-        else {
-            currentMonth = 1;
-        }
-
-        System.out.println("Current year: " + currentYear);
-        System.out.println("Current month: " + currentMonth);
-        System.out.println("Years difference: " + yearsOfDifference);
-
-        if(yearsOfDifference > 0) {
-            return (yearsOfDifference * 2) + currentMonth;
-        }
-
-        return currentMonth;
+        return (int) (Period.between(admissionDate, LocalDate.now()).toTotalMonths() / 6) + 1;
     }
 
     public String getStateAsString() {
