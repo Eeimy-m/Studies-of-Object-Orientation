@@ -11,6 +11,11 @@ public sealed class Figure permits Rectangle, Circle, Triangle {
 
     public Figure() {}
 
+    @Override
+    public String toString() {
+        return String.format("(%.2f, %.2f)", x, y);
+    }
+
     public double area() {
         if(x > 0 && y > 0) return x * y;
         return -1;
