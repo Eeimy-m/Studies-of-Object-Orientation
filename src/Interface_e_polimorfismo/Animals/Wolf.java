@@ -5,6 +5,7 @@ public class Wolf extends Animal{
     public void makeSound() {
         System.out.println("Auuuuuu!");
     }
+
     public void run(){
         System.out.println("Wolf is running!");
     }
