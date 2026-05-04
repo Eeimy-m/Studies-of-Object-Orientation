@@ -9,6 +9,11 @@ public final class Circle extends Figure{
     }
 
     @Override
+    public String toString() {
+        return String.format("Circle of radius %.2f in %s with area of %.2f", radius, super.toString(), area());
+    }
+
+    @Override
     public double area() {
         if(radius > 0) {
             return Math.PI * Math.pow(radius, 2);

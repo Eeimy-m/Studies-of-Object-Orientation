@@ -1,6 +1,6 @@
 package Heranca.Figure;
 
-public sealed class Figure permits Rectangle, Circle, Triangle {
+public sealed abstract class Figure permits Rectangle, Circle, Triangle {
     private double x;
     private double y;
 
@@ -9,17 +9,12 @@ public sealed class Figure permits Rectangle, Circle, Triangle {
         this.y = y;
     }
 
-    public Figure() {}
-
     @Override
     public String toString() {
         return String.format("(%.2f, %.2f)", x, y);
     }
 
-    public double area() {
-        if(x > 0 && y > 0) return x * y;
-        return -1;
-    }
+    public abstract double area();
 
     public void setX(double x) {
         this.x = x;
