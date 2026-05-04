@@ -1,4 +1,4 @@
-package Interface_e_polimorfismo;
+package Interface_e_polimorfismo.Figures;
 
 public class Triangle implements Figure {
     private double a;

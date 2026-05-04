@@ -1,4 +1,4 @@
-package Interface_e_polimorfismo;
+package Interface_e_polimorfismo.Figures;
 
 public class Rectangle implements Figure {
     private double widith;
