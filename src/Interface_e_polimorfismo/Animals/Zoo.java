@@ -18,6 +18,7 @@ public class Zoo  {
     void seeAnimalsInZoo() {
         for(int i = 0; i < quantity; i++) {
             animals[i].makeSound();
+            //Como fazer o animal correr?
         }
     }
 }
