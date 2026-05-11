@@ -17,6 +17,11 @@ public class Employee {
         this.dateOfEmployment = dateOfEmployment;
     }
 
+    @Override
+    public String toString() {
+        return String.format("id: %s | name: %s | Job title: %s | salary: %f | Date of Employment: %s", id, name, jobTitle, salary, dateOfEmployment);
+    }
+
     public String getId() {return id;}
 
     public String getName() {return name;}
