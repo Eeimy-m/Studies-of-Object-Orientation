@@ -7,6 +7,10 @@ import java.util.List;
 public class Company {
     private List<Employee> employees;
 
+    public Company() {
+        employees = new ArrayList<>();
+    }
+
     public void hire(Employee employee) {
         employees.add(employee);
     }
