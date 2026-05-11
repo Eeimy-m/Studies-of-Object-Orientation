@@ -57,4 +57,8 @@ public class Employee {
     public LocalDate getDateOfEmployment() {
         return dateOfEmployment;
     }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 }
