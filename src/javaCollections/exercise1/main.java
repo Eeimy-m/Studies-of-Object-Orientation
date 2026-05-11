@@ -25,5 +25,17 @@ public class main {
         }
 
         System.out.println("Frequência de cada palavra digitada: ");
+        int listSize = stringArrayList.size();
+        for(int i = 0; i < listSize; i++) {
+            int counter = 1;
+            String stringToCompare = stringArrayList.get(i);
+
+            for(int j = i+1; j < listSize; j++) {
+                if(stringToCompare.equals(stringArrayList.get(j))) {
+                    counter++;
+                }
+            }
+            System.out.println(String.format("%s: %d", stringToCompare, counter));
+        }
     }
 }
