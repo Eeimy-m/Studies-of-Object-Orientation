@@ -25,21 +25,5 @@ public class main {
         }
 
         System.out.println("Frequência de cada palavra digitada: ");
-//        ArrayList<String> repeatedStrings = new ArrayList<>();
-        int listSize = stringArrayList.size();
-        for(int i = 0; i < listSize; i++) {
-            int counter = 1;
-            String stringToCompare = stringArrayList.get(i);
-
-            for(int j = i+1; j < listSize; j++) {
-                if(stringToCompare.equals(stringArrayList.get(j))) {
-                    counter++;
-                }
-            }
-
-//            if(counter > 1) repeatedStrings.add(stringToCompare);
-
-            System.out.println(String.format("%s: %d", stringToCompare, counter));
-        }
     }
 }
