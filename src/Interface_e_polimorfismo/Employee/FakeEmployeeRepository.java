@@ -25,4 +25,8 @@ public class FakeEmployeeRepository implements Repository<Employee>{
             if(fakeEmployees[i].getId().equals(id)) System.out.println(fakeEmployees[i].toString());
         }
     }
+
+    public Employee[] getFakeEmployees() {
+        return fakeEmployees;
+    }
 }
