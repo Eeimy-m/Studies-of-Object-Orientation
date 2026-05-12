@@ -1,6 +1,6 @@
 package Interface_e_polimorfismo.Employee;
 
-public interface Repository <E extends Employee>{
-    public void saveEntity(Employee employee);
-    public void getEntityById(String id);
+public interface Repository <K, V>{
+    void save(K key, V entity);
+    V getEntityById(K key);
 }

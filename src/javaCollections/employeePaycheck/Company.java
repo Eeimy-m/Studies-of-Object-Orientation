@@ -2,65 +2,49 @@ package javaCollections.employeePaycheck;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Company {
-    private List<Employee> employees;
+    private final Map<String, Employee> employees;
 
     public Company() {
-        employees = new ArrayList<>();
+        employees = new HashMap<>();
     }
 
     public void hire(Employee employee) {
-        employees.add(employee);
+        employees.put(employee.getId(), employee);
     }
 
     public void fire(String id) {
-        for(Employee employee : employees) {
-            if(employee.getId().equals(id)) employees.remove(employee);
-        }
+        employees.remove(id);
     }
 
     public List<Employee> getEmployees() {
-        return employees;
+        return new ArrayList<>(employees.values());
     }
 
     public List<Employee> getEmployeesByJobTitle(String jobTitle) {
-        List<Employee> empByJobTitle = new ArrayList<>();
-
-        for(Employee employee : employees) {
-            if(employee.getJobTitle().equals(jobTitle)) empByJobTitle.add(employee);
-        }
-
-        return empByJobTitle;
+        return employees.values().stream()
+                .filter(e -> e.getJobTitle().equals(jobTitle))
+                .toList();
     }
 
     public void pay(String id) {
-        for(Employee employee : employees) {
-            if(employee.getId().equals(id)) {
-                employee.addPaycheck(LocalDate.now());
-            }
-        }
+        employees.get(id).addPaycheck(LocalDate.now());
     }
 
     public void increaseSalary(String id, double newSalary) {
-        for(Employee employee : employees) {
-            if(employee.getId().equals(id)) employee.setSalary(newSalary);
-        }
+        employees.get(id).setSalary(newSalary);
     }
 
     public double averageSalary(String jobTitle) {
-        int sum = 0;
-        int cont = 0;
-
-        for(Employee employee : employees) {
-            if(employee.getJobTitle().equals(jobTitle)) {
-                sum += employee.getSalary();
-                cont++;
-            }
-        }
-
-        return (double) sum / cont;
+        return employees.values().stream()
+                .filter(e -> e.getJobTitle().equals(jobTitle))
+                .mapToDouble(Employee::getSalary)
+                .average()
+                .orElse(0);
     }
 
 //    public double averageSalaryByDate(LocalDate startDate, LocalDate endDate) {}

@@ -1,5 +1,7 @@
 package Interface_e_polimorfismo.Figures;
 
+import java.util.Arrays;
+
 public class main {
     static void main() {
         Figure[] figures = new Figure[150];
@@ -9,7 +11,7 @@ public class main {
         int a = 1, b = 1, c = 1;
         double maxArea = 0;
 
-        for(int i = 0; i < figures.length; i++) {
+        for(int i = 0; i < 50; i++) {
             if(i < 50) {
                 Circle circle = new Circle(radius++);
                 maxArea += circle.area();
@@ -26,6 +28,14 @@ public class main {
                 figures[i] = triangle;
             }
         }
+
+        for(Figure figure : figures) {
+            maxArea += figure.area();
+        }
+
+        System.out.println(Arrays.stream(figures)
+                .mapToDouble(Figure::area)
+                .sum());
 
         System.out.println(String.format("Area: %.2f", maxArea));
     }
