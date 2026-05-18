@@ -25,6 +25,6 @@ public class main {
         }
 
         System.out.println("Frequência de cada palavra digitada: ");
-        //Pesquisar map.merge();
+
     }
 }

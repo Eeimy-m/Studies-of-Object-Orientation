@@ -47,5 +47,7 @@ public class Company {
                 .orElse(0);
     }
 
-//    public double averageSalaryByDate(LocalDate startDate, LocalDate endDate) {}
+    public double averageSalaryByDate(LocalDate startDate, LocalDate endDate) {
+        return
+    }
 }

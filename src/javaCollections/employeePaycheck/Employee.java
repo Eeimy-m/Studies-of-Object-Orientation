@@ -5,7 +5,7 @@ import java.time.Period;
 import java.util.Iterator;
 import java.util.List;
 
-public class Employee {
+public class Employee implements Entity<String> {
     private String id;
     private String name;
     private String jobTitle;
